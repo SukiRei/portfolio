@@ -31,152 +31,499 @@
 </style>
 </head>
 <body class="font-body-md text-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+
 <!-- TopAppBar -->
 <nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm transition-all duration-300">
 <div class="flex justify-between items-center px-margin-mobile md:px-gutter max-w-container-max mx-auto h-20 relative">
   <a class="font-headline-xl text-headline-lg-mobile font-extrabold tracking-tighter text-on-background" href="#">Dave Alexis Cancino</a>
+  <!-- Tab Switcher -->
+  <div class="hidden md:flex bg-surface-container rounded-full p-1 border border-outline-variant/30 absolute left-1/2 transform -translate-x-1/2">
+    <button class="px-6 py-2 rounded-full text-label-md font-label-md bg-primary text-on-primary shadow-sm transition-all" id="tab-graphics" onclick="switchTab('graphics')">Graphics</button>
+    <button class="px-6 py-2 rounded-full text-label-md font-label-md text-on-surface-variant hover:text-on-background transition-all" id="tab-video" onclick="switchTab('video')">Video</button>
+  </div>
   <div class="flex items-center">
     <a class="hidden md:inline-flex items-center justify-center px-6 py-2 rounded-full bg-primary text-on-primary font-bold hover:scale-105 transition-transform duration-200 shadow-sm" 
-   href="resume.pdf" 
-   download="resume.pdf">
-   Download Resume
-</a>
+       href="resume.pdf" 
+       download="resume.pdf">
+      Download Resume
+    </a>
     <button class="md:hidden text-on-background ml-4">
       <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">menu</span>
     </button>
   </div>
 </div>
 </nav>
+
 <!-- Hero Section -->
 <header class="relative pt-32 pb-24 md:pt-48 md:pb-32 px-margin-mobile md:px-gutter max-w-container-max mx-auto glowing-bg flex flex-col items-center text-center">
-<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-outline-variant/50 bg-surface-container-low/80 backdrop-blur-sm mb-8 font-label-sm text-label-sm uppercase tracking-wider text-primary">
-  <span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
-  Available for freelance
-</div>
-<h1 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-on-background mb-6 max-w-4xl mx-auto leading-tight">Video Editor &amp; Graphic Designer</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">I edit videos, make thumbnails, and I create graphic designs! I'm not just an editor, but one who's passionate to improve!</p>
-<div class="flex flex-wrap items-center justify-center gap-4">
-  <a class="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-primary text-on-primary font-bold hover:bg-inverse-primary transition-colors duration-200 gap-2 shadow-sm" href="#work">
-    View Portfolio <span class="material-symbols-outlined">arrow_downward</span>
-  </a>
-  <a class="inline-flex items-center justify-center px-8 py-4 rounded-xl border border-outline-variant hover:border-primary text-on-background hover:text-primary transition-colors duration-200" href="#contact">
-    Get in touch
-  </a>
-</div>
+  <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-outline-variant/50 bg-surface-container-low/80 backdrop-blur-sm mb-8 font-label-sm text-label-sm uppercase tracking-wider text-primary">
+    <span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+    Available for freelance
+  </div>
+  <h1 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-on-background mb-6 max-w-4xl mx-auto leading-tight">Video Editor &amp; Graphic Designer</h1>
+  <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">I edit videos, make thumbnails, and I create graphic designs! I'm not just an editor, but one who's passionate to improve!</p>
+  <div class="flex flex-wrap items-center justify-center gap-4">
+    <a class="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-primary text-on-primary font-bold hover:bg-inverse-primary transition-colors duration-200 gap-2 shadow-sm" href="#work">
+      View Portfolio <span class="material-symbols-outlined">arrow_downward</span>
+    </a>
+    <a class="inline-flex items-center justify-center px-8 py-4 rounded-xl border border-outline-variant hover:border-primary text-on-background hover:text-primary transition-colors duration-200" href="#contact">
+      Get in touch
+    </a>
+  </div>
 </header>
+
 <!-- Main Content -->
 <main class="px-margin-mobile md:px-gutter max-w-container-max mx-auto pb-section-gap" id="work">
-<!-- Thumbnails Section -->
-<section class="mb-section-gap" id="thumbnails">
-<div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
-  <div>
-    <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-2">Thumbnails</h2>
-    <p class="text-on-surface-variant font-body-md">Samples of the thumbnails I made for my videos</p>
-  </div>
-  <div class="flex gap-2">
-    <span class="px-3 py-1 rounded bg-surface-container border border-outline-variant/50 font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Photoshop</span>
-    <span class="px-3 py-1 rounded bg-surface-container border border-outline-variant/50 font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Illustrator</span>
-  </div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-  <div class="md:col-span-8 rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 bento-card relative group aspect-video">
-    <img alt="" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uhRX9D0TPmq-oXOqUOAuk7MErmrngZoL75JonvCVJvlYofDYJ6HKLA5nhdRpHg9bvYuyswLHUbmRadVxZ_oZB5aBmJAqyLYCHnoT1qQ52J7u7hQLJFdC8TJhuNksPtY-GvgOV8qMlcATnKtD09crD1t6b3u136kbJLbmIk8TFkqPQ1iGQulMX35B8F3ZZ4tcOu5ZZFsDmq3tGNXc14CQYgL1PEUhF6SWqZL_7n09ZWS6Ejv-BWnzhMp">
-    <div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 via-inverse-surface/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-      <span class="font-label-sm uppercase tracking-wider text-primary-container mb-2">Gaming</span>
-      <h3 class="font-headline-lg text-headline-lg-mobile text-on-primary">Full Combo Tool Assisted Speedcore</h3>
-    </div>
-  </div>
-  <div class="md:col-span-4 flex flex-col gap-6">
-    <div class="rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 bento-card relative group flex-1">
-      <img alt="" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uhr-1KPaoF0ZV-xu8lXOlVgQHcvwgXNWrqD-2554gt7FRShPVvjckMhMlhuWbenddyhse0sJYQEw_xChqQsvWdc15sd9K5wVL7LiredQfwovlfKyE7FuNZ77SqL9yhp1uW-L2y4LWMQqcyh9zp2isaq9Um6ZOkhjObAjGOwNGECEFeeX3hnDv93LhMLNPVOPUmyXyqjTQ2GRPUAPpr6577-joZEsah8NzLbR7iTjegZr_R-hLcCnI9hnw">
-      <div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex flex-col justify-end">
-        <span class="font-label-sm uppercase tracking-wider text-secondary-container mb-1">osu!</span>
-        <h4 class="font-body-lg text-body-lg font-bold text-on-primary">New Top Play!</h4>
+
+  <!-- ============================================================ -->
+  <!-- GRAPHICS TAB CONTENT                                         -->
+  <!-- ============================================================ -->
+  <div id="content-graphics">
+
+    <!-- Thumbnails Section -->
+    <section class="mb-section-gap" id="thumbnails">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div>
+          <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-2">Thumbnails</h2>
+          <p class="text-on-surface-variant font-body-md">Samples of the thumbnails I made for my videos</p>
+        </div>
+        <div class="flex gap-2">
+          <span class="px-3 py-1 rounded bg-surface-container border border-outline-variant/50 font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Photoshop</span>
+        </div>
       </div>
-    </div>
-    <div class="rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 bento-card relative group flex-1">
-      <img alt="" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ugoNpVnp9Q-RhoBr-pE203xBnlCRkurlJkYabqf_N7GDAuRKO9qAfz_-qpEeUEr6-TkYjNfhgDLD8o2xeWvQq6RDwUJTnRhjZAiFFhxVgxsAf9Y1udnn5SLs40J8RibSNMepO9zUKuJekBjwtDlVwSLEK-LuxRZIhY_gZ5lwuJUpYrPZJEHpiOgL-jiwVvNHqaYGl33Dn7ZOKMqjuPS1iN7SviM0WywuQZ_2v1Lu8sbk_IYnhKPglWFeg">
-      <div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex flex-col justify-end">
-        <span class="font-label-sm uppercase tracking-wider text-secondary-container mb-1">osu!</span>
-        <h4 class="font-body-lg text-body-lg font-bold text-on-primary">2 Years Special</h4>
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+        <div class="md:col-span-8 rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 bento-card relative group aspect-video">
+          <img alt="" class="w-full h-full object-cover" src="images/thumbnail1.jpg">
+          <div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 via-inverse-surface/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+            <span class="font-label-sm uppercase tracking-wider text-primary-container mb-2">Gaming</span>
+            <h3 class="font-headline-lg text-headline-lg-mobile text-on-primary">Full Combo Tool Assisted Speedcore</h3>
+          </div>
+        </div>
+        <div class="md:col-span-4 flex flex-col gap-6">
+          <div class="rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 bento-card relative group flex-1">
+            <img alt="" class="w-full h-full object-cover" src="images/thumbnail2.jpg">
+            <div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex flex-col justify-end">
+              <span class="font-label-sm uppercase tracking-wider text-secondary-container mb-1">osu!</span>
+              <h4 class="font-body-lg text-body-lg font-bold text-on-primary">New Top Play!</h4>
+            </div>
+          </div>
+          <div class="rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 bento-card relative group flex-1">
+            <img alt="" class="w-full h-full object-cover" src="images/thumbnail3.jpg">
+            <div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4 flex flex-col justify-end">
+              <span class="font-label-sm uppercase tracking-wider text-secondary-container mb-1">osu!</span>
+              <h4 class="font-body-lg text-body-lg font-bold text-on-primary">2 Years Special</h4>
+            </div>
+          </div>
+        </div>
+        <div class="md:col-span-6 rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 bento-card relative group aspect-video">
+          <img alt="" class="w-full h-full object-cover" src="images/thumbnail4.jpg">
+          <div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+            <h4 class="font-body-lg text-body-lg font-bold text-on-primary">Deadly Force</h4>
+          </div>
+        </div>
+        <div class="md:col-span-6 rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 bento-card relative group aspect-video">
+          <img alt="" class="w-full h-full object-cover" src="images/thumbnail5.jpg">
+          <div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+            <h4 class="font-body-lg text-body-lg font-bold text-on-primary">PP Rework</h4>
+          </div>
+        </div>
+        <div class="md:col-span-6 rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 bento-card relative group aspect-video">
+          <img alt="" class="w-full h-full object-cover" src="images/thumbnail6.jpg">
+          <div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+            <h4 class="font-body-lg text-body-lg font-bold text-on-primary">1 Map 4 Gamemodes</h4>
+          </div>
+        </div>
+        <div class="md:col-span-6 rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 bento-card relative group aspect-video">
+          <img alt="" class="w-full h-full object-cover" src="images/thumbnail7.png">
+          <div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+            <h4 class="font-body-lg text-body-lg font-bold text-on-primary">40 osu skins!</h4>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="md:col-span-6 rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 bento-card relative group aspect-video">
-    <img alt="" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ugOXlQxxLO1DDcvkFitUp67HEM7BllCf4VErjdu_7ERxhMVN6PAS5ituuSM12VqshMxovtq4j9HkcFd8kIMnWrxZWdf38FS95Fvy1klv6nQBe2XZFUnbnYgu40j-12pCHvPLhjFoK4zrpPvSUE1lrQ1ZGK5ASISEQ3kr7ncW6pTS0tIIhb-akvzVanVENhqIkQk7XMq-ovvlDcZk8hfaAeniG1dzKa50rpHRxzaYZm2q5iUwxPInAwtmLQ">
-    <div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
-      <h4 class="font-body-lg text-body-lg font-bold text-on-primary">Deadly Force</h4>
-    </div>
-  </div>
-  <div class="md:col-span-6 rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 bento-card relative group aspect-video">
-    <img alt="" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uhlaxb071yikTFnDnEwxRiQou8LWiRoFVcNbCiHSsKlaWGsF4lNX0EebZw-MbN-Wnq78eLHwDMp7Manm-R3yr8ZaIVOTck1fg9P5QYjjHsVDLaXODgIJR-ARwW8vC5LGQonyNKraq40T9pJ9itzb3Zr6LNeYr2y83qwN45_BMw4QZ2NmZE_jeMKuDz9uNJ8JpPAIVfClSnwJsB1adeuLw7vJacbLGkqD_BAQGe9q3WCazn6XmykgBP2w8Y">
-    <div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
-      <h4 class="font-body-lg text-body-lg font-bold text-on-primary">PP Rework</h4>
-    </div>
-  </div>
-</div>
-</section>
-<!-- Banners Section -->
-<section class="mb-section-gap" id="graphics">
-<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-12">Banners</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-  <div class="rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 bento-card">
-    <img alt="" class="w-full h-auto object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ujDJzHsnSHW1E20qkbGvUYj_3OW60k7xAj75w-tguw9Foj9jmzI-hVEk8rpjc_QgfOoWcmKbiwiPPKKYwPYNx_gP9RpwifhqO_Dgrn7b4vUDaHU6tbdkJLU0SrpKD48aFz6RJcjGOKXEgVhnwO0Zfw38ZGrlwXLIK6UuNVnto-EG-O435QBQCUrQ_bKEyUPf9qSkZxk92Phoo5WYcu8iT_RmFx73AX_FBd12iPvJaVCop-iHeQTCMOJcwM">
-  </div>
-  <div class="rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 bento-card">
-    <img alt="" class="w-full h-auto object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ui-euT0NUruqPtY-_tAfwSoBZOFhQRzCDoBJ9AIr99fV6uyGCTZfkN61laH64HIHd-eoCZ4RtumoacYXY_vH11EzMrqbXNT2yXLDZVuOaRySldgc3DMK3TefpJNQOXe201q8PbtheOuANGai-1_sS437OZmVKR6EgMp3PLsBofWftiD3wS2XdKyIO3LobrWeNWkKBV-M4-8mOqzUjJKzQvtH_nM5QsMGMXRDi7HZnEFD2qr9KXKVpSRrmA">
-  </div>
-  <div class="rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 bento-card md:col-span-2">
-    <img alt="" class="w-full h-auto object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ui2p_JFFSoUkqTLtUiCJrkHNDqM3iOpeUDJMYYQDvqT-cWUVFvHoy5cr709c6kd5OJXoOdwoZBpkNPjUxFT18TLl66y-qYKZr2_726NYPz4SK07-6S9eYbEyrSy3cZzOoSikIsAPmD2MkqOMHskgbAHjwX-O8XfSOsFyS6VqFDATEKyyeHv_xJPUrqiu6bDdf7-ZSbpslCH88QcNS4M4AVICARtZccNZvdbeT8swP67HfJD6hmQMaJLuIk">
-  </div>
-  <div class="rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 bento-card md:col-span-2">
-    <img alt="" class="w-full h-auto object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uhhzwy5uOBxlNXZerArV3QUhJT_cslTA1NeJaaJhI_9X7gqq8DKWwqqKcCBczY9YSs-8R0M_khkB_HgoiU-oOx1yNaXYBoTIAZUcjTTyS1wF8r6rlHsAL5IlkQ3YseyEM-Cqjw2nihSJANj4L9chvnOUHn8ujRa__cAovfUVKuWQ0gOMtOaibg1TlzCioxT_4j6fxiTX3K5Qr0b7bUK0FjRMhIu6DrTGphXRX1Ls2dsoHhjW7ApGSfEGfs">
-  </div>
-</div>
-</section>
-<!-- Logos and Advertisements Section -->
-<section>
-<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-12">Logos and Advertisements</h2>
-<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
-  <div class="md:col-span-4 flex flex-col gap-4">
-    <div class="rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 bento-card aspect-square">
-      <img alt="" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ugWOavnn8F2dgZq9gWxDw4WfWFyy1JVTeHyVVj5KjDZDALvNUcPjO6WneJ8FfwHBdzVekZNQKemwgQupTk8JZ4H2_1BlH7e3vR_T7Wx5WAKbGWGJm3rOEUAO-F7HMcNoA7dtyobrrFQ-x9UqjkMh_wPHmNarcgWz1JPD8Z0KpojDswvDjwhMAkQuVyF0nQ7TPReFHIR0vjBhnKqYzQ99CsW69fiweHIyf_ka40VVDoPWaL9ahwnewjt7g">
-    </div>
-    <div class="rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 bento-card aspect-square">
-      <img alt="" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ui-qZt0t6YtaJWKYwFZvECyzJV8cc848TD02r-S4RpfbWL9uVATQM3txccf2fsypLDIsUtMlMzPeaqUNQYerXamWH3epUaFr66MwOb_FlqjCP0h5Bs-2G0sGius2O7OkaJQgb_bNUMoXn-BSFEq6dEXQ46OVDWw8Lkc1a-ej23znZ9rOzWzgoO3g-HzqiBw3idY9TbfC-ga6RY3Bh2EIHNqH9nxYo64kfPwGZ_vRLjiNg8nsT5Eqxpbtg">
-    </div>
-    <h3 class="font-label-sm text-label-sm text-on-surface-variant mt-2 text-center uppercase tracking-wider">Arcade Tournament Logo</h3>
-  </div>
-  <div class="md:col-span-4 flex flex-col gap-4">
-    <div class="rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 bento-card aspect-square md:aspect-auto md:h-full">
-      <img alt="" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ugzPadXJu3ct014vErEjTMjRv6a3WAdgLstP8Irb34f51hYezgwC0aOEVt8iLpZXvwVw4X-w5_fAsr79CY8hb-ZyxdSybEeB1V23M7bXJq1Qf3-eYbsOyhdLj4L9X4_riZErTMkyfr3Nsp9FHAsXFiLjWYolGPeDM7kFm37x1Cv2QoB31KrukSwwBWxos2eHU1Hfn84AU0pvN9WuoJ8Yn3lwWcwKD8tUNcPje680dhkFj93KpQ9CaSIaKU">
-    </div>
-    <h3 class="font-label-sm text-label-sm text-on-surface-variant mt-2 text-center uppercase tracking-wider">Advertisement for a business</h3>
-  </div>
-  <div class="md:col-span-4 flex flex-col gap-4">
-    <div class="rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 bento-card aspect-square">
-      <img alt="" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uiSQ56zEUGO9U6bFQKWqqo9mdPoOad6OjpISMyX2rXgxq5C6f1cY7UoOPxLVJpIc0esOh3KykCH4yjRH_ggrhmsTRdpn8nAzOfgBPrk3DCxr950FrDUMqb--Qec05XyM8tAGieEFMIoGhDFy5i7HACfNkou9syJvPk0So0LlXZKZvUNaxux7sYI0F53KUZ7aMjSl79nVepS_wenSKi-kMo45nFu5N7fqIvqYcmGzlD7vF4cJxm1uhHibg">
-    </div>
-    <h3 class="font-label-sm text-label-sm text-on-surface-variant mt-2 text-center uppercase tracking-wider">Logo for a school activity</h3>
-  </div>
-</div>
-</section>
-<!-- CTA Section -->
-<section class="mt-section-gap py-24 rounded-3xl bg-surface-container border border-outline-variant/50 relative overflow-hidden flex flex-col items-center text-center px-6" id="contact">
-<div class="absolute inset-0 bg-gradient-to-br from-primary-container/30 to-surface/50"></div>
-<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-6 relative z-10">Ready to level up your visuals?</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto mb-10 relative z-10">Let's collaborate on your next project. Whether it's high-impact thumbnails, engaging edits, or striking graphic design.</p>
-<a class="inline-flex items-center justify-center px-10 py-5 rounded-xl bg-primary text-on-primary font-bold text-lg hover:scale-105 transition-transform duration-200 relative z-10 shadow-md" href="mailto:cancinodavealexis@gmail.com">
-  Start a Project
-</a>
-</section>
+    </section>
+
+    <!-- Banners Section -->
+    <section class="mb-section-gap" id="graphics">
+      <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-12">Banners</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 bento-card md:col-span-2">
+          <img alt="" class="w-full h-auto object-cover" src="images/banner4.jpg">
+        </div>
+        <div class="rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 bento-card md:col-span-2">
+          <img alt="" class="w-full h-auto object-cover" src="images/banner2.jpg">
+        </div>
+        <div class="rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 bento-card md:col-span-2">
+          <img alt="" class="w-full h-auto object-cover" src="images/banner3.png">
+        </div>
+        <div class="rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 bento-card md:col-span-2">
+          <img alt="" class="w-full h-auto object-cover" src="images/banner1.jpg">
+        </div>
+      </div>
+    </section>
+
+    <!-- Logos and Advertisements Section -->
+    <section class="mb-section-gap">
+      <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-12">Logos, Advertisements, and Public Materials</h2>
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+        <!-- Arcade Tournament Logo -->
+        <div class="md:col-span-4 flex flex-col gap-4">
+          <div class="rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 bento-card aspect-square">
+            <img alt="" class="w-full h-full object-cover" src="images/logo1.jpg">
+          </div>
+          <div class="rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 bento-card aspect-square">
+            <img alt="" class="w-full h-full object-cover" src="images/logo2.jpg">
+          </div>
+          <h3 class="font-label-sm text-label-sm text-on-surface-variant mt-2 text-center uppercase tracking-wider">Arcade Tournament Logo</h3>
+        </div>
+        <!-- Advertisement -->
+        <div class="md:col-span-4 flex flex-col gap-4">
+          <div class="rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 bento-card aspect-square">
+            <img alt="" class="w-full h-full object-cover" src="images/advert.jpg">
+          </div>
+          <h3 class="font-label-sm text-label-sm text-on-surface-variant mt-2 text-center uppercase tracking-wider">Advertisement for a business</h3>
+        </div>
+        <!-- Logo 3 + Public Materials -->
+        <div class="md:col-span-4 flex flex-col gap-4">
+          <div class="rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 bento-card aspect-square">
+            <img alt="" class="w-full h-full object-cover" src="images/logo3.jpg">
+          </div>
+          <div class="rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30 bento-card aspect-square">
+            <img alt="" class="w-full h-full object-cover" src="images/pubmat.png">
+          </div>
+          <h3 class="font-label-sm text-label-sm text-on-surface-variant mt-2 text-center uppercase tracking-wider">Public Materials</h3>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /#content-graphics -->
+
+  <!-- ============================================================ -->
+  <!-- VIDEO TAB CONTENT                                            -->
+  <!-- ============================================================ -->
+  <div class="hidden" id="content-video">
+
+    <!-- Short Form Reels Section -->
+    <section class="mb-section-gap">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div>
+          <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-2">Short Form Reels</h2>
+          <p class="text-on-surface-variant font-body-md">Samples of my short form reels during my internship</p>
+        </div>
+        <div class="flex gap-2">
+          <span class="px-3 py-1 rounded bg-surface-container border border-outline-variant/50 font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Premiere</span>
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+
+        <!-- Sample 1 -->
+        <div class="flex flex-col gap-2">
+          <p class="font-bold text-on-surface-variant text-md mt-1">
+            Hooks to Reels 
+          </p>
+          <div class="relative aspect-[9/16] rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30">
+            <iframe
+              class="w-full h-full"
+              src="https://www.youtube.com/embed/DX_VZrbeoHA"
+              title="Sample 1"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <p class="font-body-md text-on-surface-variant text-xs mt-1">
+            Using the hooks and turning it into engaging and watchable content
+          </p>
+        </div>
+
+        <!-- Sample 2 -->
+        <div class="flex flex-col gap-2">
+          <p class="font-bold text-on-surface-variant text-md mt-1">
+            Hooks to Reels 2
+          </p>
+          <div class="relative aspect-[9/16] rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30">
+            <iframe
+              class="w-full h-full"
+              src="https://www.youtube.com/embed/ldCg0SQDtJo"
+              title="Sample 2"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <p class="font-body-md text-on-surface-variant text-xs mt-1">
+            Using the hook become the icon to inform the viewer about the cosplay experience inside the event.
+          </p>
+        </div>
+
+        <!-- Sample 3 -->
+        <div class="flex flex-col gap-2">
+          <p class="font-bold text-on-surface-variant text-md mt-1">
+            Fast Paced
+          </p>
+          <div class="relative aspect-[9/16] rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30">
+            <iframe
+              class="w-full h-full"
+              src="https://www.youtube.com/embed/rRoRmOfBu9M"
+              title="Sample 3"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <p class="font-body-md text-on-surface-variant text-xs mt-1">
+            A short form trailer that matches the energy of the music event shown in the video.
+          </p>
+        </div>
+
+        <!-- Sample 4 -->
+        <div class="flex flex-col gap-2">
+          <p class="font-bold text-on-surface-variant text-md mt-1">
+            Fast Paced and Informational
+          </p>
+          <div class="relative aspect-[9/16] rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30">
+            <iframe
+              class="w-full h-full"
+              src="https://www.youtube.com/embed/Cw3ayqjkRjA"
+              title="Sample 4"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <p class="font-body-md text-on-surface-variant text-xs mt-1">
+            This video informs you about the activities available upon entering the event.
+          </p>
+        </div>
+
+        <!-- Sample 5 -->
+        <div class="flex flex-col gap-2">
+          <p class="font-bold text-on-surface-variant text-md mt-1">
+            Trend Based
+          </p>
+          <div class="relative aspect-[9/16] rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30">
+            <iframe
+              class="w-full h-full"
+              src="https://www.youtube.com/embed/pSBljwLsJFM"
+              title="Sample 5"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <p class="font-body-md text-on-surface-variant text-xs mt-1">
+            Shows a POV trend that you can find in TikTok. It hooks the viewer to watch by adding that element.
+          </p>
+        </div>
+
+        <!-- Sample 6 -->
+        <div class="flex flex-col gap-2">
+          <p class="font-bold text-on-surface-variant text-md mt-1">
+            Meme Based
+          </p>
+          <div class="relative aspect-[9/16] rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30">
+            <iframe
+              class="w-full h-full"
+              src="https://www.youtube.com/embed/Pf3CHivMxXw"
+              title="Sample 6"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <p class="font-body-md text-on-surface-variant text-xs mt-1">
+            Uses memes and humor that is currently trending in the internet.
+          </p>
+        </div>
+
+        <!-- Sample 7 -->
+        <div class="flex flex-col gap-2">
+          <p class="font-bold text-on-surface-variant text-md mt-1">
+            Cinematic
+          </p>
+          <div class="relative aspect-[9/16] rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30">
+            <iframe
+              class="w-full h-full"
+              src="https://www.youtube.com/embed/UMgLdxFf5RM"
+              title="Sample 7"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <p class="font-body-md text-on-surface-variant text-xs mt-1">
+            Slow paced technique that gives the viewer a cinematic and emotional feel upon watching the video.
+          </p>
+        </div>
+
+        <!-- Sample 8 -->
+        <div class="flex flex-col gap-2">
+          <p class="font-bold text-on-surface-variant text-md mt-1">
+            Informational
+          </p>
+          <div class="relative aspect-[9/16] rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30">
+            <iframe
+              class="w-full h-full"
+              src="https://www.youtube.com/embed/LteDBjKUeAo"
+              title="Sample 8"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <p class="font-body-md text-on-surface-variant text-xs mt-1">
+           A simple editing style that aims to give information to the viewers.
+          </p>
+        </div>
+
+        <!-- Sample 9 -->
+        <div class="flex flex-col gap-2">
+          <p class="font-bold text-on-surface-variant text-md mt-1">
+            Teaser Reel
+          </p>
+          <div class="relative aspect-[9/16] rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30">
+            <iframe
+              class="w-full h-full"
+              src="https://www.youtube.com/embed/sVo2gzET6sk"
+              title="Sample 9"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <p class="font-body-md text-on-surface-variant text-xs mt-1">
+            A short form reel that informs the viewer that the event is near. It drives hype, excitement, and gives interests upon seeing the video.
+          </p>
+        </div>
+
+        <!-- Sample 10 -->
+        <div class="flex flex-col gap-2">
+          <p class="font-bold text-on-surface-variant text-md mt-1">
+            Call to Action
+          </p>
+          <div class="relative aspect-[9/16] rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30">
+            <iframe
+              class="w-full h-full"
+              src="https://www.youtube.com/embed/FPB7LHCKVng"
+              title="Sample 5"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <p class="font-body-md text-on-surface-variant text-xs mt-1">
+            This video catches the viewer on what this announcement is about. Notifying the viewer that this is their chance to enter this certain event.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Other Videos Section -->
+    <section class="mb-section-gap">
+      <div class="mb-12">
+        <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-2">Other Videos</h2>
+        <p class="text-on-surface-variant font-body-md">Gaming and personal channel videos edited for YouTube</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+ 
+        <!-- Video 1 -->
+        <div class="flex flex-col gap-2">
+          <div class="relative aspect-video rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30">
+            <iframe class="w-full h-full" src="https://www.youtube.com/embed/o3xgzTJgzlA" title="Video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <p class="font-body-md text-on-surface-variant text-sm mt-1">
+            I Played osu! Standard after 2 Years
+          </p>
+        </div>
+ 
+        <!-- Video 2 -->
+        <div class="flex flex-col gap-2">
+          <div class="relative aspect-video rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30">
+            <iframe class="w-full h-full" src="https://www.youtube.com/embed/qgrXAWeprzc" title="Video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <p class="font-body-md text-on-surface-variant text-sm mt-1">
+            The PP rework I've been waiting for
+          </p>
+        </div>
+ 
+        <!-- Video 3 -->
+        <div class="flex flex-col gap-2">
+          <div class="relative aspect-video rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30">
+            <iframe class="w-full h-full" src="https://www.youtube.com/embed/js8x2QM3jPc" title="Video 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <p class="font-body-md text-on-surface-variant text-sm mt-1">
+            Is this $25 Magnetic Keyboard actually good for osu!?
+          </p>
+        </div>
+ 
+        <!-- Video 4 -->
+        <div class="flex flex-col gap-2">
+          <div class="relative aspect-video rounded-xl overflow-hidden bg-surface-container border border-outline-variant/30">
+            <iframe class="w-full h-full" src="https://www.youtube.com/embed/9HXW76C0Wsc" title="Video 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <p class="font-body-md text-on-surface-variant text-sm mt-1">
+            40 osu! Skins in 2 Minutes!
+          </p>
+        </div>
+ 
+      </div>
+    </section>
+
+  </div><!-- /#content-video -->
+
+  <!-- ============================================================ -->
+  <!-- CTA Section — always visible                                 -->
+  <!-- ============================================================ -->
+  <section class="mt-section-gap py-24 rounded-3xl bg-surface-container border border-outline-variant/50 relative overflow-hidden flex flex-col items-center text-center px-6" id="contact">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary-container/30 to-surface/50"></div>
+    <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background mb-6 relative z-10">Ready to level up your visuals?</h2>
+    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto mb-10 relative z-10">Let's collaborate on your next project. Whether it's high-impact thumbnails, engaging edits, or striking graphic design.</p>
+    <a class="inline-flex items-center justify-center px-10 py-5 rounded-xl bg-primary text-on-primary font-bold text-lg hover:scale-105 transition-transform duration-200 relative z-10 shadow-md" href="mailto:cancinodavealexis@gmail.com">
+      Start a Project
+    </a>
+  </section>
+
 </main>
+
 <!-- Footer -->
 <footer class="w-full py-12 mt-section-gap border-t border-outline-variant/30 bg-surface-container-low flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-gutter max-w-container-max mx-auto font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant ease-in-out duration-200">
-<div class="mb-6 md:mb-0 text-center md:text-left">
-  <span class="font-body-lg text-body-lg font-bold text-on-background block mb-2 normal-case tracking-normal">Dave Alexis Cancino</span>
-  <span class="text-on-surface-variant">© 2024 Dave Alexis Cancino. All rights reserved.</span>
-</div>
-<div class="flex gap-6"></div>
+  <div class="mb-6 md:mb-0 text-center md:text-left">
+    <span class="font-body-lg text-body-lg font-bold text-on-background block mb-2 normal-case tracking-normal">Dave Alexis Cancino</span>
+    <span class="text-on-surface-variant">© 2026 Dave Alexis Cancino. All rights reserved.</span>
+  </div>
+  <div class="flex gap-6"></div>
 </footer>
+
+<script>
+function switchTab(tabName) {
+  const graphicsBtn = document.getElementById('tab-graphics');
+  const videoBtn = document.getElementById('tab-video');
+  const graphicsContent = document.getElementById('content-graphics');
+  const videoContent = document.getElementById('content-video');
+
+  if (tabName === 'graphics') {
+    graphicsBtn.className = "px-6 py-2 rounded-full text-label-md font-label-md bg-primary text-on-primary shadow-sm transition-all";
+    videoBtn.className = "px-6 py-2 rounded-full text-label-md font-label-md text-on-surface-variant hover:text-on-background transition-all";
+    graphicsContent.classList.remove('hidden');
+    videoContent.classList.add('hidden');
+  } else {
+    videoBtn.className = "px-6 py-2 rounded-full text-label-md font-label-md bg-primary text-on-primary shadow-sm transition-all";
+    graphicsBtn.className = "px-6 py-2 rounded-full text-label-md font-label-md text-on-surface-variant hover:text-on-background transition-all";
+    videoContent.classList.remove('hidden');
+    graphicsContent.classList.add('hidden');
+  }
+}
+</script>
+
 </body></html>
