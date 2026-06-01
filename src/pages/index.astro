@@ -142,9 +142,62 @@ const longVideos = [
 ];
 
 const youtubeThumbnailIds = [...reels, ...longVideos].map((video) => video.embed);
+const pageTitle = "Dave Cancino | Video Editor, Thumbnail Designer & Graphic Designer";
+const pageDescription =
+  "Portfolio of Dave Cancino showcasing video editing, YouTube thumbnails, branding, campaign design, and motion-focused creative work.";
+const pageKeywords = [
+  "Dave Cancino",
+  "video editor",
+  "graphic designer",
+  "thumbnail designer",
+  "YouTube video editor",
+  "branding portfolio",
+  "motion design"
+];
+const pageSchema = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Dave Cancino",
+    jobTitle: ["Video Editor", "Graphic Designer", "Thumbnail Designer"],
+    email: "mailto:cancinodavealexis@gmail.com",
+    url: Astro.site?.toString(),
+    sameAs: ["https://www.linkedin.com/in/davealexiscancino/"]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Dave Cancino Portfolio",
+    url: Astro.site?.toString(),
+    description: pageDescription
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: pageTitle,
+    description: pageDescription,
+    url: Astro.site ? new URL("/", Astro.site).toString() : undefined,
+    about: [
+      "Video editing",
+      "YouTube thumbnails",
+      "Graphic design",
+      "Branding",
+      "Motion graphics"
+    ]
+  }
+].map((entry) =>
+  Object.fromEntries(Object.entries(entry).filter(([, value]) => value !== undefined))
+);
 ---
 
-<BaseLayout>
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  image="/images/thumbnail1.jpg"
+  canonicalPath="/"
+  keywords={pageKeywords}
+  schema={pageSchema}
+>
   <nav class="fixed inset-x-0 top-0 z-50 px-3 pt-3 motion-enter md:px-4 md:pt-4" data-animate>
     <div class="shell">
       <div class="relative flex min-h-20 flex-col gap-3 rounded-[1.75rem] border border-surface-line/90 bg-[#fdf8f5]/98 px-4 py-4 shadow-[0_18px_40px_-28px_rgba(34,31,28,0.45)] backdrop-blur-xl sm:min-h-20 sm:flex-row sm:items-center sm:justify-between sm:gap-4 md:rounded-[2rem] md:border md:bg-background/95 md:px-6 md:py-4 md:shadow-[0_22px_48px_-30px_rgba(34,31,28,0.38)]">

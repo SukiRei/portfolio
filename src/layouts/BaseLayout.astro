@@ -4,12 +4,36 @@ import "../styles/global.css";
 interface Props {
   title?: string;
   description?: string;
+  image?: string;
+  pageType?: "website" | "article";
+  canonicalPath?: string;
+  keywords?: string[];
+  noindex?: boolean;
+  schema?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const {
   title = "Dave Cancino | Video Editor & Graphic Designer",
-  description = "Portfolio featuring video editing, thumbnail design, branding, and motion work."
+  description = "Portfolio featuring video editing, thumbnail design, branding, and motion work.",
+  image = "/images/thumbnail1.jpg",
+  pageType = "website",
+  canonicalPath,
+  keywords = [
+    "Dave Cancino",
+    "video editor portfolio",
+    "graphic designer portfolio",
+    "thumbnail designer",
+    "motion graphics portfolio"
+  ],
+  noindex = false,
+  schema
 } = Astro.props;
+
+const site = Astro.site;
+const pageUrl = site ? new URL(canonicalPath ?? Astro.url.pathname, site).toString() : undefined;
+const ogImage = image.startsWith("http") ? image : site ? new URL(image, site).toString() : undefined;
+const robots = noindex ? "noindex, nofollow" : "index, follow";
+const schemaMarkup = schema ? JSON.stringify(schema) : undefined;
 ---
 
 <!doctype html>
@@ -18,7 +42,20 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta name="keywords" content={keywords.join(", ")} />
+    <meta name="robots" content={robots} />
+    <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    {pageUrl && <link rel="canonical" href={pageUrl} />}
+    <meta property="og:type" content={pageType} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {pageUrl && <meta property="og:url" content={pageUrl} />}
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {ogImage && <meta name="twitter:image" content={ogImage} />}
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -34,6 +71,7 @@ const {
       href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=DM+Sans:wght@400;500;700&family=Geist:wght@500;600&display=swap"
       rel="stylesheet"
     />
+    {schemaMarkup && <script type="application/ld+json" set:html={schemaMarkup} />}
   </head>
   <body class="min-h-screen bg-background font-sans text-ink antialiased selection:bg-primary-fog selection:text-primary-ink">
     <slot />
