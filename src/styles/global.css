@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background:
+      radial-gradient(circle at 50% -15%, rgba(235, 232, 218, 0.95) 0%, rgba(253, 248, 245, 0) 45%),
+      linear-gradient(180deg, #fdf8f5 0%, #fbf7f2 100%);
+  }
+
+  body.modal-open {
+    overflow: hidden;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-[1440px] px-5 md:px-6;
+  }
+
+  .tab-pill {
+    @apply flex-1 rounded-full px-4 py-2 text-center font-label text-xs tracking-[0.05em] transition sm:flex-none sm:px-6 sm:text-sm;
+  }
+
+  .tab-pill-active {
+    @apply bg-primary text-primary-ink shadow-sm;
+  }
+
+  .tab-pill-inactive {
+    @apply text-ink-soft hover:text-ink;
+  }
+
+  .chip {
+    @apply rounded-full border border-surface-line bg-surface-muted px-3 py-1 font-label text-xs uppercase tracking-[0.14em] text-ink-muted;
+  }
+
+  .section-title {
+    @apply font-display text-3xl leading-tight tracking-[-0.02em] text-ink md:text-5xl;
+  }
+
+  .card-frame {
+    @apply overflow-hidden rounded-2xl border border-surface-line bg-surface shadow-[0_1px_0_rgba(28,27,25,0.04)] transition duration-300;
+  }
+
+  .lift-card {
+    @apply hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_20px_50px_-25px_rgba(96,95,84,0.45)];
+  }
+
+  .media-veil {
+    @apply absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-primary-strong/90 via-primary-strong/20 to-transparent p-4 opacity-100 transition duration-300 group-hover:opacity-100 md:p-6 md:opacity-0;
+  }
+
+  .image-trigger {
+    @apply block overflow-hidden transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_-25px_rgba(96,95,84,0.45)];
+  }
+
+  .image-trigger img {
+    @apply transition duration-300;
+  }
+
+  .image-trigger:hover img,
+  .image-trigger:focus-visible img {
+    transform: scale(1.02);
+    filter: saturate(1.02);
+  }
+
+  .image-modal {
+    @apply m-auto border-0 bg-transparent p-0 text-ink;
+  }
+
+  .image-modal::backdrop {
+    background: rgba(20, 18, 16, 0.82);
+    backdrop-filter: blur(10px);
+  }
+
+  .image-modal__surface {
+    @apply relative flex max-h-[calc(100vh-2rem)] max-w-[calc(100vw-2rem)] items-start justify-center p-4 md:max-h-[calc(100vh-4rem)] md:max-w-[calc(100vw-4rem)] md:p-6;
+  }
+
+  .image-modal__close {
+    @apply absolute right-4 top-4 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-black/55 text-3xl leading-none text-white transition hover:bg-black/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent md:right-6 md:top-6;
+  }
+
+  .image-modal__figure {
+    @apply m-0 flex max-h-full max-w-full flex-col items-center gap-3;
+  }
+
+  .image-modal__image {
+    width: auto;
+    height: auto;
+    max-width: min(calc(100vw - 2rem), calc(100vh - 6rem) * 3);
+    max-height: calc(100vh - 6rem);
+    object-fit: contain;
+    border-radius: 1.5rem;
+    box-shadow: 0 28px 60px -32px rgba(0, 0, 0, 0.65);
+  }
+
+  .image-modal__caption {
+    @apply max-w-[70ch] text-center font-label text-xs uppercase tracking-[0.18em] text-white/80;
+  }
+}
+
+@layer utilities {
+  .motion-enter {
+    opacity: 1;
+    transform: none;
+  }
+
+  .motion-float {
+    animation: float-card 7s ease-in-out infinite;
+  }
+
+  html.motion-ready .motion-enter {
+    opacity: 0;
+    transform: translate3d(0, 26px, 0) scale(0.985);
+    transition:
+      opacity 720ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--motion-delay, 0ms);
+    will-change: opacity, transform;
+  }
+
+  html.motion-ready .motion-enter.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  html.motion-ready .panel-animate {
+    animation: panel-rise 520ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .motion-float,
+    html.motion-ready .panel-animate {
+      animation: none;
+    }
+
+    html.motion-ready .motion-enter {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+}
+
+@keyframes float-card {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -8px, 0);
+  }
+}
+
+@keyframes panel-rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 22px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
