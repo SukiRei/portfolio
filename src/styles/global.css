@@ -26,7 +26,7 @@
   }
 
   .tab-pill {
-    @apply rounded-full px-6 py-2 font-label text-sm tracking-[0.05em] transition;
+    @apply flex-1 rounded-full px-4 py-2 text-center font-label text-xs tracking-[0.05em] transition sm:flex-none sm:px-6 sm:text-sm;
   }
 
   .tab-pill-active {
@@ -54,7 +54,7 @@
   }
 
   .media-veil {
-    @apply absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-primary-strong/90 via-primary-strong/20 to-transparent p-4 opacity-0 transition duration-300 group-hover:opacity-100 md:p-6;
+    @apply absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-primary-strong/90 via-primary-strong/20 to-transparent p-4 opacity-100 transition duration-300 group-hover:opacity-100 md:p-6 md:opacity-0;
   }
 
   .image-trigger {

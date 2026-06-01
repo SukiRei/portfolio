@@ -145,44 +145,62 @@ const youtubeThumbnailIds = [...reels, ...longVideos].map((video) => video.embed
 ---
 
 <BaseLayout>
-  <nav class="fixed inset-x-0 top-0 z-50 border-b border-surface-line/70 bg-background/90 backdrop-blur-xl motion-enter" data-animate>
-    <div class="shell relative flex h-20 items-center justify-between">
-      <a href="#" class="font-display text-2xl font-bold tracking-[-0.04em] text-ink md:text-3xl">
+  <nav class="fixed inset-x-0 top-0 z-50 px-3 pt-3 motion-enter md:px-4 md:pt-4" data-animate>
+    <div class="shell">
+      <div class="relative flex min-h-20 flex-col gap-3 rounded-[1.75rem] border border-surface-line/90 bg-[#fdf8f5]/98 px-4 py-4 shadow-[0_18px_40px_-28px_rgba(34,31,28,0.45)] backdrop-blur-xl sm:min-h-20 sm:flex-row sm:items-center sm:justify-between sm:gap-4 md:rounded-[2rem] md:border md:bg-background/95 md:px-6 md:py-4 md:shadow-[0_22px_48px_-30px_rgba(34,31,28,0.38)]">
+        <a href="#" class="font-display text-center text-[1.75rem] font-bold tracking-[-0.05em] text-ink sm:text-left md:text-3xl">
         Dave Cancino
-      </a>
+        </a>
 
-      <div class="flex items-center gap-3">
-        <a
-          href="mailto:cancinodavealexis@gmail.com"
-          class="inline-flex items-center rounded-full border border-surface-line px-4 py-2.5 font-label text-sm uppercase tracking-[0.08em] text-ink transition hover:border-primary hover:text-primary md:px-6"
-        >
-          Get in touch
-        </a>
-        <a
-          href="/resume.pdf"
-          download="resume.pdf"
-          class="inline-flex rounded-full bg-primary px-4 py-2.5 font-label text-sm text-primary-ink transition hover:scale-[1.02] md:px-6"
-        >
-          Download Resume
-        </a>
+        <div class="grid w-full grid-cols-2 gap-2 sm:flex sm:w-auto sm:flex-row sm:items-center sm:justify-end sm:gap-3">
+          <a
+            href="mailto:cancinodavealexis@gmail.com"
+            class="inline-flex min-h-[3rem] items-center justify-center rounded-full border border-surface-line bg-white px-3 py-2.5 text-center font-label text-[11px] uppercase tracking-[0.1em] text-ink shadow-[0_10px_24px_-18px_rgba(34,31,28,0.45)] transition hover:border-primary hover:text-primary sm:min-h-0 sm:w-auto sm:bg-transparent sm:px-4 sm:text-sm sm:shadow-none md:bg-white md:px-6 md:shadow-[0_12px_24px_-18px_rgba(34,31,28,0.25)]"
+          >
+            Get in touch
+          </a>
+          <a
+            href="/resume.pdf"
+            download="resume.pdf"
+            class="inline-flex min-h-[3rem] items-center justify-center rounded-full bg-primary px-3 py-2.5 text-center font-label text-[11px] uppercase tracking-[0.1em] text-primary-ink shadow-[0_18px_32px_-20px_rgba(118,92,62,0.85)] transition hover:scale-[1.02] sm:min-h-0 sm:w-auto sm:px-4 sm:text-sm md:px-6"
+          >
+            Resume
+          </a>
+        </div>
       </div>
     </div>
   </nav>
 
-  <header class="shell flex flex-col items-center px-5 pb-18 pt-28 text-center md:pb-24 md:pt-36">
-    <h1 class="max-w-5xl font-display text-5xl leading-none tracking-[-0.04em] text-ink motion-enter md:text-7xl" data-animate style="--motion-delay: 90ms;">
+  <header class="shell flex flex-col items-center px-5 pb-14 pt-44 text-center sm:pt-36 md:pb-24 md:pt-36">
+    <h1 class="max-w-5xl font-display text-4xl leading-[0.92] tracking-[-0.04em] text-ink motion-enter sm:text-5xl md:text-7xl" data-animate style="--motion-delay: 90ms;">
       Video Editor & Graphic Designer
     </h1>
 
-    <p class="mt-5 max-w-2xl text-lg leading-8 text-ink-muted motion-enter md:text-xl" data-animate style="--motion-delay: 180ms;">
+    <p class="mt-5 max-w-2xl text-base leading-7 text-ink-muted motion-enter sm:text-lg sm:leading-8 md:text-xl" data-animate style="--motion-delay: 180ms;">
       I edit videos, make thumbnails, and create graphic designs with a strong focus on energy, clarity, and constant improvement.
     </p>
+
+    <div class="mt-7 grid w-full max-w-sm grid-cols-1 gap-3 motion-enter sm:hidden" data-animate style="--motion-delay: 260ms;">
+      <a
+        href="/resume.pdf"
+        download="resume.pdf"
+        class="inline-flex min-h-[3.25rem] items-center justify-center rounded-full bg-primary px-5 py-3 font-label text-sm uppercase tracking-[0.1em] text-primary-ink shadow-[0_22px_36px_-24px_rgba(118,92,62,0.9)] transition hover:scale-[1.02]"
+      >
+        Download Resume
+      </a>
+      <a
+        href="mailto:cancinodavealexis@gmail.com"
+        class="inline-flex min-h-[3.25rem] items-center justify-center rounded-full border border-surface-line bg-white px-5 py-3 font-label text-sm uppercase tracking-[0.1em] text-ink shadow-[0_16px_32px_-24px_rgba(34,31,28,0.45)] transition hover:border-primary hover:text-primary"
+      >
+        Email Me
+      </a>
+    </div>
 
   </header>
 
   <main id="work" class="shell pb-8 md:pb-10">
     <div class="mb-10 flex justify-center motion-enter md:mb-12" data-animate style="--motion-delay: 240ms;">
-      <div class="flex rounded-full border border-surface-line bg-surface-muted p-1">
+      <div class="flex w-full max-w-md flex-wrap justify-center rounded-[1.5rem] border border-surface-line bg-surface-muted p-1 sm:w-auto sm:flex-nowrap sm:rounded-full">
         <button id="tab-graphics" class="tab-pill tab-pill-active" type="button" data-work-target="graphics">
           Graphics
         </button>
@@ -238,23 +256,23 @@ const youtubeThumbnailIds = [...reels, ...longVideos].map((video) => video.embed
         </div>
 
         <div class="relative">
-          <div class="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-gradient-to-r from-background to-transparent"></div>
-          <div class="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-background to-transparent"></div>
+          <div class="pointer-events-none absolute inset-y-0 left-0 z-10 hidden w-12 bg-gradient-to-r from-background to-transparent md:block"></div>
+          <div class="pointer-events-none absolute inset-y-0 right-0 z-10 hidden w-12 bg-gradient-to-l from-background to-transparent md:block"></div>
           <div
-            class="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-4 pr-8 [scrollbar-width:none] cursor-grab select-none [&::-webkit-scrollbar]:hidden active:cursor-grabbing"
+            class="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-4 pr-4 [scrollbar-width:none] cursor-grab select-none sm:pr-8 [&::-webkit-scrollbar]:hidden active:cursor-grabbing"
             data-banner-carousel
           >
             {banners.map((banner, index) => (
-              <div class="shrink-0 snap-start motion-enter" data-animate style={`--motion-delay: ${index * 90}ms;`}>
+              <div class="w-[min(88vw,32rem)] shrink-0 snap-start motion-enter sm:w-auto" data-animate style={`--motion-delay: ${index * 90}ms;`}>
                 <button
                   type="button"
-                  class="group image-trigger relative rounded-2xl motion-float focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                  class="group image-trigger relative w-full rounded-2xl motion-float focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
                   data-image-modal-trigger
                   data-image-src={banner}
                   data-image-alt={`Banner design ${index + 1}`}
                   aria-label={`Open banner design ${index + 1}`}
                 >
-                  <img src={banner} alt={`Banner design ${index + 1}`} class="pointer-events-none h-[256px] w-auto max-w-none object-contain" draggable="false" />
+                  <img src={banner} alt={`Banner design ${index + 1}`} class="pointer-events-none h-[220px] w-full object-contain sm:h-[256px] sm:w-auto sm:max-w-none" draggable="false" />
                   <div class="media-veil">
                     <h3 class="text-left text-lg font-semibold text-white md:text-xl">{`Banner design ${index + 1}`}</h3>
                   </div>
@@ -268,7 +286,7 @@ const youtubeThumbnailIds = [...reels, ...longVideos].map((video) => video.embed
       <section class="mb-16 md:mb-20 motion-enter" data-animate>
         <div class="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <h2 class="section-title text-4xl md:text-5xl">Logos & Campaigns</h2>
-          <div class="flex rounded-full border border-surface-line bg-surface-muted p-1" role="tablist" aria-label="Brand work categories">
+          <div class="flex flex-wrap rounded-[1.5rem] border border-surface-line bg-surface-muted p-1 sm:flex-nowrap sm:rounded-full" role="tablist" aria-label="Brand work categories">
             {brandCategories.map((category, index) => (
               <button
                 id={`brand-tab-${category.id}`}
@@ -300,7 +318,7 @@ const youtubeThumbnailIds = [...reels, ...longVideos].map((video) => video.embed
               <div class="grid grid-cols-1 gap-6">
                 {category.items.map((group, groupIndex) => (
                   <div class="flex flex-col gap-4 motion-enter" data-animate style={`--motion-delay: ${groupIndex * 120}ms;`}>
-                    <div class="flex flex-wrap gap-4">
+                    <div class="flex flex-wrap justify-center gap-4 md:justify-start">
                       {group.images.map((image, imageIndex) => (
                         <button
                           type="button"
@@ -312,7 +330,7 @@ const youtubeThumbnailIds = [...reels, ...longVideos].map((video) => video.embed
                           data-image-alt={`${group.title} ${group.images.length > 1 ? imageIndex + 1 : ""}`.trim()}
                           aria-label={`Open ${group.title}${group.images.length > 1 ? ` ${imageIndex + 1}` : ""}`}
                         >
-                          <img src={image} alt={`${group.title} ${group.images.length > 1 ? imageIndex + 1 : ""}`.trim()} class="h-[256px] w-[256px] max-w-full object-contain" />
+                          <img src={image} alt={`${group.title} ${group.images.length > 1 ? imageIndex + 1 : ""}`.trim()} class="h-auto w-full max-w-[18rem] object-contain sm:max-w-[16rem] md:h-[256px] md:w-[256px]" />
                           <div class="media-veil">
                             <h3 class="text-left text-base font-semibold text-white md:text-lg">
                               {`${group.title}${group.images.length > 1 ? ` ${imageIndex + 1}` : ""}`}
@@ -336,10 +354,9 @@ const youtubeThumbnailIds = [...reels, ...longVideos].map((video) => video.embed
           <div>
             <h2 class="section-title text-4xl md:text-5xl">Short Form Reels</h2>
           </div>
-          <span class="chip">Premiere</span>
         </div>
 
-        <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {reels.map((reel, index) => (
             <article class="flex flex-col gap-2 motion-enter" data-animate style={`--motion-delay: ${index * 45}ms;`}>
               <p class="mt-1 text-sm font-semibold uppercase tracking-[0.08em] text-ink-soft">{reel.title}</p>
@@ -387,11 +404,11 @@ const youtubeThumbnailIds = [...reels, ...longVideos].map((video) => video.embed
       </section>
     </div>
 
-    <section id="contact" class="relative mt-16 overflow-hidden rounded-[2rem] border border-surface-line bg-surface-muted px-6 py-14 text-center motion-enter md:mt-20 md:px-10 md:py-16" data-animate>
+    <section id="contact" class="relative mt-16 overflow-hidden rounded-[2rem] border border-surface-line bg-surface-muted px-5 py-12 text-center motion-enter sm:px-6 md:mt-20 md:px-10 md:py-16" data-animate>
       <div class="absolute inset-0 bg-[linear-gradient(135deg,rgba(235,232,218,0.8),rgba(253,248,245,0.35))]"></div>
       <div class="relative z-10 mx-auto max-w-2xl">
         <h2 class="section-title text-4xl md:text-5xl">Ready to level up your visuals?</h2>
-        <p class="mt-5 text-lg leading-8 text-ink-muted">
+        <p class="mt-5 text-base leading-7 text-ink-muted sm:text-lg sm:leading-8">
           Let&apos;s collaborate on your next project, whether it&apos;s high-impact thumbnails, engaging edits, or striking graphic design.
         </p>
       </div>
@@ -399,7 +416,7 @@ const youtubeThumbnailIds = [...reels, ...longVideos].map((video) => video.embed
   </main>
 
   <footer class="border-t border-surface-line/70 bg-surface-soft">
-    <div class="shell flex flex-col items-center justify-between gap-2 py-4 text-center md:flex-row md:text-left">
+    <div class="shell flex flex-col items-center justify-between gap-3 py-4 text-center md:flex-row md:text-left">
       <div class="flex flex-col items-center gap-2 md:items-start">
         <p class="font-display text-lg tracking-[-0.03em] text-ink md:text-xl">Dave Cancino</p>
         <div class="flex flex-wrap items-center justify-center gap-3 text-sm text-ink-muted md:justify-start">
