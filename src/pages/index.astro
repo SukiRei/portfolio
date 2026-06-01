@@ -333,6 +333,21 @@ const pageSchema = [
               </div>
             ))}
           </div>
+          <div class="mt-4 flex justify-center gap-2" data-banner-scroll-indicator>
+            {banners.map((_, index) => (
+              <button
+                type="button"
+                class:list={[
+                  "hidden h-2 rounded-full bg-ink/20 transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background md:block",
+                  index === 0 ? "w-8 bg-primary/85" : "w-2"
+                ]}
+                data-banner-scroll-dot
+                data-banner-index={index}
+                aria-label={`Go to banner design ${index + 1}`}
+                aria-pressed={index === 0 ? "true" : "false"}
+              ></button>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -726,6 +741,7 @@ const pageSchema = [
     imageModalClose?.addEventListener("click", closeImageModal);
 
     const bannerCarousel = document.querySelector("[data-banner-carousel]");
+    const bannerScrollIndicator = document.querySelector("[data-banner-scroll-indicator]");
 
     if (bannerCarousel instanceof HTMLElement) {
       const dragThreshold = 8;
@@ -734,6 +750,35 @@ const pageSchema = [
       let activePointerId = null;
       let startX = 0;
       let startScrollLeft = 0;
+      const bannerScrollDots =
+        bannerScrollIndicator instanceof HTMLElement
+          ? Array.from(bannerScrollIndicator.querySelectorAll("[data-banner-scroll-dot]"))
+          : [];
+
+      const updateBannerScrollIndicator = () => {
+        if (!bannerScrollDots.length) return;
+
+        const maxScrollLeft = Math.max(0, bannerCarousel.scrollWidth - bannerCarousel.clientWidth);
+        const progress = maxScrollLeft <= 0 ? 0 : bannerCarousel.scrollLeft / maxScrollLeft;
+        const activeIndex = Math.min(
+          bannerScrollDots.length - 1,
+          Math.max(0, Math.round(progress * (bannerScrollDots.length - 1)))
+        );
+
+        bannerScrollDots.forEach((dot, index) => {
+          if (!(dot instanceof HTMLElement)) return;
+
+          dot.classList.toggle("w-8", index === activeIndex);
+          dot.classList.toggle("bg-primary/85", index === activeIndex);
+          dot.classList.toggle("w-2", index !== activeIndex);
+          dot.classList.toggle("bg-ink/20", index !== activeIndex);
+          dot.setAttribute("aria-pressed", index === activeIndex ? "true" : "false");
+        });
+
+        if (bannerScrollIndicator instanceof HTMLElement) {
+          bannerScrollIndicator.classList.toggle("opacity-0", maxScrollLeft <= 16);
+        }
+      };
 
       const startDragging = (clientX, pointerId) => {
         isPointerDown = true;
@@ -777,6 +822,10 @@ const pageSchema = [
         stopDragging(event.pointerId);
       });
 
+      bannerCarousel.addEventListener("scroll", () => {
+        updateBannerScrollIndicator();
+      }, { passive: true });
+
       bannerCarousel.addEventListener("pointercancel", (event) => {
         stopDragging(event.pointerId);
       });
@@ -786,6 +835,26 @@ const pageSchema = [
           stopDragging(event.pointerId);
         }
       });
+
+      bannerScrollDots.forEach((dot) => {
+        if (!(dot instanceof HTMLButtonElement)) return;
+
+        dot.addEventListener("click", () => {
+          const targetIndex = Number(dot.dataset.bannerIndex ?? "0");
+          const slides = Array.from(bannerCarousel.children);
+          const targetSlide = slides[targetIndex];
+
+          if (!(targetSlide instanceof HTMLElement)) return;
+
+          bannerCarousel.scrollTo({
+            left: targetSlide.offsetLeft,
+            behavior: "smooth"
+          });
+        });
+      });
+
+      updateBannerScrollIndicator();
+      window.addEventListener("resize", updateBannerScrollIndicator, { passive: true });
     }
 
     motionQuery.addEventListener("change", initializeMotion);
